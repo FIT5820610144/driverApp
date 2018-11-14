@@ -1,0 +1,58 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+
+
+</ion-header>
+
+
+<ion-content padding class="bg-image">
+
+    
+      <ion-card style="border-radius:10px;margin-top:30%;">
+          <ion-card-header text-center>
+            เพิ่มข้อมูลรถ
+          </ion-card-header>
+          <ion-card-content>
+              <ion-list>
+
+                  <ion-item>
+                    <ion-input type="text" placeholder="เลขทะเบียน ตย. กก 1234 ยะลา" [(ngModel)]="veh_number"></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-input type="text" placeholder="ยี่ห้อรถ ตย. ฮอนด้า" [(ngModel)]="veh_brand" required></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-input type="text" placeholder="สีรถ ตย. ดำ" [(ngModel)]="veh_color" required></ion-input>
+                      </ion-item>
+
+                      <ion-item>
+                        <ion-label>ประเภทรถ</ion-label>
+                        <ion-select [(ngModel)]="veh_type">
+                          <ion-option value="วินมอเตอร์ไซต์">วินมอเตอร์ไซต์</ion-option>
+                          <ion-option value="ตุ๊กตุ๊ก">ตุ๊กตุ๊ก</ion-option>
+                        </ion-select>
+                      </ion-item>
+
+                </ion-list>
+          </ion-card-content>
+        </ion-card>
+        <div text-center>
+        
+        
+</div>
+<ion-col col-6> 
+  <button ion-button color="light" style="width:130px;" (click)="back()" outline>ย้อนกลับ</button>
+</ion-col>
+<ion-col col-6> 
+  <button ion-button color="namaeto" style="width:130px;" (click)="register($event,veh_number,veh_brand,veh_color,veh_type)">ลงทะเบียน</button>
+</ion-col>
+</ion-content>

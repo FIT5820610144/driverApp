@@ -1,0 +1,56 @@
+<ion-card class="card-style">
+  <ion-card-header text-center style="font-size:20px;color:tomato;">
+    แก้ไขข้อมูล
+  </ion-card-header>
+
+  <ion-card-content>
+      <ion-grid>
+          <ion-row>
+            <ion-col style="height: 10%; width:50%;">
+                <ion-label>เลขทะเบียน : </ion-label>
+              <ion-card style="border-radius:10px;">
+                <ion-input style="margin-left:10px;" type="text" [(ngModel)]="veh_number" ></ion-input>
+              </ion-card>
+            </ion-col>
+            <ion-col style="height: 10%; width:50%;">
+                <ion-label>ยี่ห้อ : </ion-label>
+              <ion-card style="border-radius:10px;">
+                <ion-input style="margin-left:10px;" type="text" [(ngModel)]="veh_brand"></ion-input>   
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col style="height: 10%; width:50%;">
+                <ion-label>สี : </ion-label>
+                <ion-card style="border-radius:10px;">
+                    <ion-input style="margin-left:10px;" type="text" [(ngModel)]="veh_color"></ion-input>   
+              </ion-card>
+            </ion-col> 
+          </ion-row>
+          <ion-row>
+            <ion-col style="height: 10%; width:50%;">
+                <ion-label>ประเภทรถ : </ion-label>
+                <ion-card style="border-radius:10px;">
+                  <ion-select [(ngModel)]="veh_type" style="width:100%;float: right;">
+                    <ion-option value="วินมอเตอร์ไซต์">วินมอเตอร์ไซต์</ion-option>
+                    <ion-option value="ตุ๊กตุ๊ก">ตุ๊กตุ๊ก</ion-option>
+                  </ion-select>
+              </ion-card>
+            </ion-col>
+           
+          </ion-row>
+          <ion-row text-center>
+            <ion-col>
+                <button ion-button color="namaeto" round (click)="edit($even,veh_number,veh_brand,veh_color,veh_type)">แก้ไข</button>
+            </ion-col>
+            <ion-col>
+                <button ion-button color="namaeto" round (click)="cancleEdit()">ยกเลิก</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      
+  </ion-card-content>
+  
+
+
+  </ion-card>

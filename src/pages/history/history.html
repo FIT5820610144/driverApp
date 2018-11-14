@@ -1,0 +1,62 @@
+
+<ion-header>
+
+    <ion-navbar color="namaeto">
+    <ion-title>ประวัติการใช้งาน</ion-title>
+    
+     <ion-buttons left>
+          <button ion-button icon-only (click)="setBackButtonAction()">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons> 
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content>
+             <div *ngIf="showData">
+             <ion-list>
+                <ion-item-sliding *ngFor="let item of recordList" >
+                <ion-item style="background-color:white;">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col style="margin:auto">
+                                    {{item.origin}} - {{item.destination}}
+                                    <ion-row style="font-size:10px">
+                                            {{item.cr_datetime}} {{dri_name}}-{{dri_tel}} 
+                                    </ion-row>
+                            </ion-col>
+                            <ion-col>
+                                <div class="circle">
+                                            {{item.fare}}฿
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>      
+                </ion-item>
+                <ion-item-options side="right">
+                        <button ion-button color="danger" style="width:100px;font-size: 20px;" (click)="deleteOne(item.cr_number)">ลบ</button>
+                </ion-item-options>
+                    </ion-item-sliding>
+                    <!-- <ion-item>
+                        <div style="float:right;display: inline;">
+                            <ion-card color="namaeto" style="border-radius:10px;width: auto;height: 30px;">
+                                <ion-card-content style="margin-top:-6px"> ค่าโดยสารทั้งหมด {{total_fare}} บาท</ion-card-content>
+                            </ion-card>
+                    </div>
+                    </ion-item> -->
+                </ion-list>
+            
+            
+          <div text-center>
+              <p>
+              <button ion-button color="namaeto" style="margin:auto; border-radius: 20px;" (click)="delete()">ลบข้อมูลทั้งหมด</button>
+            </p>
+        </div>
+    </div>  
+        <div *ngIf="noData" style="margin-top:10px;text-align:center">
+      ------ ไม่มีข้อมูล ---------
+    </div>
+
+</ion-content>

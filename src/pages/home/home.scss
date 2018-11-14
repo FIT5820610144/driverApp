@@ -1,0 +1,41 @@
+page-home {
+    #map {
+        height: 100%; 
+        width: 100%; 
+        position:absolute; 
+        top: 0; 
+        left: 0; 
+        bottom: 0;
+        z-index: 0;
+      }
+
+      #content{
+        position: relative; 
+        z-index: 1; /* The z-index should be higher than Google Maps */
+        width: 290px;
+        margin:auto;
+        //background: black;
+        height: auto;
+        opacity: 100%; /* Set the opacity for a slightly transparent Google Form */ 
+        //color: white;
+      }
+      .footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      .icon{
+        width:30px;
+        //margin-top:20%;
+        margin-right:20%;
+        float:right !important;
+        padding:2px;
+      }
+      .call-card{
+        border-radius: 10px;
+        background-color : #F26730;
+        color:white;
+        font-size:20px;
+        bottom: 0 !important;
+      }
+}

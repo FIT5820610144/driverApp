@@ -1,0 +1,90 @@
+<!--
+  Generated template for the ManagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+--><ion-header>
+
+  <ion-navbar color="namaeto">
+    <ion-title>ข้อมูลรถ</ion-title>
+    
+     <ion-buttons left>
+          <button ion-button icon-only (click)="setBackButtonAction()">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons> 
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+   <ion-content class="bg-image"style=" background-image: url('../../assets/imgs/vehbg.png');">
+    <div ion-fixed>
+    <ion-grid style="margin-left:auto;margin-top:20%">
+        <ion-row>
+          <ion-col style="margin-left:10px">
+              <img class="vehicle-img" src="../../assets/imgs/{{type_img}}" alt="">
+          </ion-col>
+           
+        </ion-row>
+      </ion-grid>
+    </div>        
+    <ion-card-content class="details">   
+              <div *ngFor="let item of vehicleList" padding>
+                  <div class="text-margin"> 
+                    <ion-list>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col style="margin:auto;font-size:17px">
+                            <ion-icon name="card"></ion-icon>
+                        </ion-col>
+                        <ion-col style="margin-left:-63%;font-size:17px">
+                              <b>เลขทะเบียน</b> 
+                              <br>{{item.veh_number}}
+                        </ion-col>
+                      </ion-row>
+                        <ion-row>
+                            <ion-col style="margin:auto;font-size:17px">
+                                <ion-icon ios="ios-pricetag" md="md-pricetag"></ion-icon>
+                            </ion-col>
+                            <ion-col style="margin-left:-63%;font-size:17px">
+                                 <b>ยี่ห้อ</b> {{item.veh_brand}}
+                            </ion-col>
+                          </ion-row>
+                          <ion-row>
+                              <ion-col style="margin-right:-63%;font-size:17px">
+                                  <ion-icon name="color-palette"></ion-icon>
+                                </ion-col>
+                                <ion-col style="margin:auto;font-size:17px">
+                                    <b>สี</b> {{item.veh_color}}
+                                </ion-col>
+                              </ion-row>
+                              <ion-row>
+                                <ion-col style="margin-right:-63%;font-size:17px">
+                                    <ion-icon name="car"></ion-icon>
+                                  </ion-col>
+                                  <ion-col style="margin:auto;font-size:17px">
+                                      <b>ประเภท</b> {{item.veh_type}}
+                                  </ion-col>
+                                </ion-row>
+
+                    <ion-row>
+                        <ion-col>
+                            <div text-center>
+                                <button ion-button class="radius-but" color="namaeto" (click)="editVehicle()" style="margin-right:50px;">แก้ไขข้อมูล</button>
+                              </div>
+                        </ion-col>
+                          
+                      </ion-row>
+                        
+                    </ion-grid>
+                  </ion-list>
+  
+                  </div>    
+                  </div>
+  
+                     
+    </ion-card-content>
+  
+  </ion-content>
+  

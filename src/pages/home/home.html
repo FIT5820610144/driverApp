@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="namaeto">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+        <div style="font-size: x-large;">
+            NAMAETO'
+        </div> 
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+  <div #map id="map"></div>
+  <ion-item no-lines *ngIf="status">
+      <ion-label>สถานะ</ion-label>
+      <ion-toggle color="secondary" checked="{{dActive}}" [(ngModel)]="active" (ngModelChange)="setActive($event)"></ion-toggle>
+    </ion-item>
+
+
+<div *ngIf="modallDissmiss">
+  <ion-footer padding >
+    <ion-card class="call-card">
+        
+      <ion-grid>
+        <ion-row>
+          <ion-col item-start>
+            <img src="http://{{url}}/namaetoDB/CustApp/{{cust_img}}" style="width:50px;height:50px;margin-top:5px;border:2px solid white; border-radius:50%;">
+          </ion-col>
+          <ion-col col-auto>
+           
+            {{cust_name}} {{cust_surname}}
+            
+              <p style="color:white;">{{cust_origin}}</p>
+           
+          </ion-col>
+          <ion-col>
+              <img class="icon" src="../../assets/imgs/icons/call.png">
+              <img class="icon" src="../../assets/imgs/icons/route.png">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-card>
+  <!-- <div *ngIf="cancelBtn">
+  <button ion-button color="namaeto" full round (click)="cancleCalling()">ยกเลิก</button>
+</div> -->
+<div *ngIf="pickup_button">
+  <button ion-button color="namaeto" full round (click)="pickUp()">รับลูกค้า</button>
+</div>
+<div *ngIf="finish_button">
+  <button ion-button style="background-color: #ffae42" full round (click)="finish()">เสร็จสิ้น</button>
+</div>
+</ion-footer>
+</div>
+  
+</ion-content>

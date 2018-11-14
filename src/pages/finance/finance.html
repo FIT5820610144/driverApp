@@ -1,0 +1,98 @@
+<!--
+  Generated template for the FinancePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="namaeto">
+    <ion-title>การเงิน</ion-title>
+     
+    <ion-buttons left>
+        <button ion-button icon-only (click)="setBackButtonAction()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </button>
+    </ion-buttons> 
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style=" background-image: url('../../assets/imgs/moneybg.png');">
+  
+ <div ion-fixed>
+    <ion-grid style="margin-left:60px;margin-top:40px" *ngIf="noData">
+        <ion-row style="color:white;font-size:20px;font-weight: bold;display: inline;">
+           TOTAL  
+        </ion-row>
+        <ion-row style="margin-top:-20px">
+            <div style="font-size:50px;color:white;font-weight: bold;">
+                $00.00
+              </div>
+        </ion-row>
+      </ion-grid>
+  
+      <div *ngIf="showData">
+  <ion-grid style="margin-left:60px;margin-top:40px">
+    <ion-row style="color:white;font-size:20px;font-weight: bold;display: inline;margin-left:15%">
+       TOTAL  
+    </ion-row>
+    <ion-row style="margin-top:-20px">
+        <div style="font-size:50px;color:white;font-weight: bold;margin-left:15%">
+            ${{amount}}
+          </div>
+    </ion-row>
+  </ion-grid>
+
+<ion-grid style="margin-top:30%;margin-left: 30px;">
+  <ion-row style="font-size:17px">
+   
+    <ion-col style="-webkit-flex:0 0 60%">
+        <ion-icon name="logo-bitcoin"></ion-icon> บริการ
+    </ion-col>
+    <ion-col style="float:right !important">
+        <b>${{total_fare}}</b> 
+    </ion-col>
+    <ion-col>
+บาท
+    </ion-col>
+  </ion-row>
+  <ion-row  style="font-size:17px">
+      <ion-col style="-webkit-flex:0 0 60%">
+          <ion-icon name="refresh-circle"></ion-icon>
+          คอมมิชชั่น {{commission}}%
+      </ion-col>
+    <ion-col style="float:right !important">
+        <b>${{comm}}</b>
+    </ion-col>
+    <ion-col>
+      บาท
+    </ion-col>
+  </ion-row>
+  <ion-row style="font-size:17px">
+      <ion-col style="-webkit-flex:0 0 60%">
+          <ion-icon name="cash"></ion-icon> รวม
+          
+      </ion-col>
+    <ion-col style="float:right !important">
+        <b>${{amount}}</b>
+    </ion-col>
+    <ion-col>
+      บาท
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+  <div text-center>
+      <button ion-button color="namaeto" style="margin-top:30px; border-radius: 20px;">โอนเงิน</button>
+    </div>
+  </div>
+  </div>
+
+  
+<div *ngIf="noData" style="margin-top:80%;text-align:center">
+  ------ ไม่มีข้อมูล ---------
+</div>
+   
+</ion-content>

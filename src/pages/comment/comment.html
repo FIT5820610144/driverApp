@@ -1,0 +1,51 @@
+<!--
+  Generated template for the CommentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="namaeto">
+        <ion-title>ความคิดเห็น</ion-title>
+        
+         <ion-buttons left>
+              <button ion-button icon-only (click)="setBackButtonAction()">
+                  <ion-icon name="arrow-back"></ion-icon>
+              </button>
+          </ion-buttons> 
+        </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list *ngIf="showData">
+    <ion-item  *ngFor="let item of commentList" (click)="showDetails(item.comment_detail)">
+      <ion-avatar item-start>
+        <img src="http://{{globalUrl}}/namaetoDB/CustApp/{{item.cust_img}}">
+      </ion-avatar>
+      <h2>{{item.cust_name}} {{item.cust_surname}}</h2>
+       
+        <!-- Rating -->
+          <rating [(ngModel)]="item.rate" 
+        readOnly="true" 
+        max="5" 
+        emptyStarIconName="star-outline"
+        halfStarIconName="star-half" 
+        starIconName="star" 
+        nullable="false"
+        (ngModelChange)="onModelChange($event)"> 
+        </rating> 
+         <!-- Rating -->
+         <div style="display:inline !important;color:gray">{{item.comment_datetime}}</div>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="noData" style="text-align:center">
+      ------ ไม่มีข้อมูล ---------
+    </div>
+
+  
+                
+</ion-content>
